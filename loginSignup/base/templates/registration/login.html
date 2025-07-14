@@ -1,14 +1,32 @@
 {% extends "base.html" %}
+{% load socialaccount %}
+
 {% block content %}
 <div class="shadow-wrap">
- <div class="form-wrap">
-  <h3>Login </h3>
-<form method="POST">
- {% csrf_token %}
- {{form}}
- <button type="submit">Submit</button>
-</form>
-<a class="signup-link" href="{% url "base:authView" %}">Signup</a>
+  <div class="form-wrap">
+    <h3>Login</h3>
+    <form method="POST">
+      {% csrf_token %}
+      {{ form }}
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- ✅ Less margin below this text -->
+    <p style="margin-top: 20px; margin-bottom: 5px;">Or sign in with:</p>
+
+    <!-- ✅ Google sign-in button -->
+    <a class="google-btn" href="{% provider_login_url 'google' %}">
+      <img
+        src="https://developers.google.com/identity/images/g-logo.png"
+        alt="Google logo"
+      />
+      <span>Sign in with Google</span>
+    </a>
+
+    <p style="margin-top: 20px;">
+      Don't have an account?
+      <a class="signup-link" href="{% url 'base:signup' %}"> Signup </a>
+    </p>
+  </div>
 </div>
-</div>
-{% endblock content %}a
+{% endblock content %}
