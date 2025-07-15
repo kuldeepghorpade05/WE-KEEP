@@ -29,36 +29,56 @@
       href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
       rel="stylesheet"
     />
+
+    <style>
+  @keyframes wave {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(14deg); }
+    20% { transform: rotate(-8deg); }
+    30% { transform: rotate(14deg); }
+    40% { transform: rotate(-4deg); }
+    50% { transform: rotate(10deg); }
+    60% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+  .wave {
+    display: inline-block;
+    transform-origin: 70% 70%;
+    animation: wave 2s infinite;
+  }
+</style>
+
   </head>
 
-  <body
-    class="bg-green-100 min-h-screen"
-    style="font-family: 'Poppins', sans-serif"
-  >
+  <body class="bg-green-100 min-h-screen" style="font-family: 'Poppins', sans-serif">
     <!-- ✅ Header -->
     <header class="w-full px-3 sm:px-0 py-4 bg-gray-900 shadow-lg">
-      <div
-        class="nav-container sm:w-4/5 mx-auto flex items-center justify-between"
-      >
-        <!-- ✅ Title + Hello Username -->
-        <div class="flex items-center gap-4">
-          <a
-            class="text-2xl sm:text-3xl font-bold text-yellow-500 hover:text-yellow-600 flex items-center"
-            href="/"
-          >
-            <i class="material-icons-round text-3xl">description</i> We Keep
-          </a>
-          <span class="text-white text-base sm:text-lg">
-            Hello, {{ username }}!
+      <div class="nav-container sm:w-4/5 mx-auto flex items-center justify-between">
+            <!-- ✅ Title + Hello Username -->
+            <div class="flex flex-col sm:flex-row sm:items-center sm:gap-4">
+            <a class="text-2xl sm:text-3xl font-bold text-yellow-500  flex items-center">
+                <i class="material-icons-round text-3xl mr-1">description</i> We Keep
+            </a>
+          <span class="font-semibold text-lg sm:text-xl sm:ml-3" style="color: #33ffa8;">
+          <span class="wave">👋</span> Hello, {{ username }}!
           </span>
-        </div>
+
+            </div>
+
+
 
         <!-- ✅ Right Side Buttons -->
-        <div class="flex items-center gap-2">
-          <button
-            class="bg-yellow-500 p-2 rounded-md hover:bg-yellow-600 flex items-center gap-1"
-            id="addBtn"
-          >
+        <div class="flex items-center gap-16">
+             <!-- ✅ GitHub Fork link -->
+          <a href="https://github.com/kuldeepghorpade05/WE-KEEP" target="_blank" class="flex items-center gap-1 text-white hover:text-yellow-400" >
+           <i class="fab fa-github"></i> Fork </a>
+
+             <!-- ✅ LinkedIn Profile link -->
+            <a href="https://www.linkedin.com/in/kuldeep-ghorpade/" target="_blank" class="flex items-center gap-1 text-white hover:text-blue-400">
+             <i class="fab fa-linkedin"></i> LinkedIn </a>
+
+          <button class="bg-yellow-500 p-2 rounded-md hover:bg-yellow-600 flex items-center gap-1" id="addBtn">
             <i class="material-icons-round">add_box</i>Add New Note
           </button>
           <!-- ✅ Secure logout form -->
@@ -69,8 +89,10 @@
               <i class="material-icons-round">logout</i> Logout
             </button>
           </form>
+
+        
         </div>
-      </div>
+      
     </header>
 
     <!-- ✅ Notes Container -->
