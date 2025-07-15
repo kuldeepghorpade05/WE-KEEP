@@ -1,0 +1,87 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>We Keep | Kuldeep Ghorpade</title>
+
+    <!-- ✅ Favicon -->
+    <link
+      rel="shortcut icon"
+      href="{% static 'assets/fav.ico' %}"
+      type="image/x-icon"
+    />
+
+    <!-- ✅ Google Icons & Tailwind -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body
+    class="bg-green-100 min-h-screen"
+    style="font-family: 'Poppins', sans-serif"
+  >
+    <!-- ✅ Header -->
+    <header class="w-full px-3 sm:px-0 py-4 bg-gray-900 shadow-lg">
+      <div
+        class="nav-container sm:w-4/5 mx-auto flex items-center justify-between"
+      >
+        <!-- ✅ Title + Hello Username -->
+        <div class="flex items-center gap-4">
+          <a
+            class="text-2xl sm:text-3xl font-bold text-yellow-500 hover:text-yellow-600 flex items-center"
+            href="/"
+          >
+            <i class="material-icons-round text-3xl">description</i> We Keep
+          </a>
+          <span class="text-white text-base sm:text-lg">
+            Hello, {{ username }}!
+          </span>
+        </div>
+
+        <!-- ✅ Right Side Buttons -->
+        <div class="flex items-center gap-2">
+          <button
+            class="bg-yellow-500 p-2 rounded-md hover:bg-yellow-600 flex items-center gap-1"
+            id="addBtn"
+          >
+            <i class="material-icons-round">add_box</i>Add New Note
+          </button>
+          <!-- ✅ Secure logout form -->
+          <form method="POST" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit"
+              class="bg-red-500 text-white p-2 rounded-md hover:bg-red-600 flex items-center gap-1">
+              <i class="material-icons-round">logout</i> Logout
+            </button>
+          </form>
+        </div>
+      </div>
+    </header>
+
+    <!-- ✅ Notes Container -->
+    <div
+      id="notesContainer"
+      class="grid pt-6 pb-8 pr-4 sm:pr-12 pl-4 sm:pl-12 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"
+    >
+      <!-- Notes appear here from script.js -->
+    </div>
+
+    <!-- ✅ Main App Script -->
+    <script src="{% static 'assets/script.js' %}"></script>
+  </body>
+</html>
