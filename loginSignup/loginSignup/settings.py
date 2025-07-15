@@ -150,6 +150,13 @@ AUTHENTICATION_BACKENDS = (
 
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        },
         'APP': {
             'client_id': '296063798383-gm9v8c0qqfhkpeh01ds7ai1lcct5info.apps.googleusercontent.com',
             'secret': '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',
@@ -160,5 +167,54 @@ SOCIALACCOUNT_PROVIDERS = {
 
 
 
+SOCIALACCOUNT_ADAPTER = 'base.adapters.MySocialAccountAdapter'  # adjust path
+
+
+
+
 
 SITE_ID = 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# DJANGO ORM IF NEED TO DELTE RECORDS FROM TABLE LIKE OAUTH RECORDS OR CUSTOM RECORDS 
+
+# python manage.py shell
+# from django.contrib.auth.models import User
+# user = User.objects.get(pk=3)
+# user.delete()

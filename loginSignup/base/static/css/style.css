@@ -15,7 +15,7 @@ body {
 }
 
 .shadow-wrap {
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 25px;
     background-color: #F0F2FB;
 }
