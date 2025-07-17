@@ -12,16 +12,16 @@ router.register(r'notes', NoteDataViewSet, basename='notedata')
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    # ✅ Main app routes
+    # Main app routes
     path("", include(("base.urls", "base"), namespace="base")),
 
-    # ✅ Django Allauth for OAuth sign-in
+    #  Django Allauth for OAuth sign-in
     path('accounts/', include('allauth.urls')),
 
-    # ✅ Django built-in auth for logout, password change/reset
+    # Django built-in auth for logout, password change/reset
     path('accounts/', include('django.contrib.auth.urls')),
 
-    # ✅ DRF API endpoints
+    # DRF API endpoints
     path('api/', include(router.urls)),
 ]
 

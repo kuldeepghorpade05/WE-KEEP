@@ -9,14 +9,14 @@
 
     <title>We Keep | Kuldeep Ghorpade</title>
 
-    <!-- ✅ Favicon -->
+    <!-- Favicon -->
     <link
       rel="shortcut icon"
       href="{% static 'assets/fav.ico' %}"
       type="image/x-icon"
     />
 
-    <!-- ✅ Google Icons & Tailwind -->
+    <!-- Google Icons & Tailwind -->
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
       rel="stylesheet"
@@ -52,10 +52,10 @@
   </head>
 
   <body class="bg-green-100 min-h-screen" style="font-family: 'Poppins', sans-serif">
-    <!-- ✅ Header -->
+    <!--  Header -->
     <header class="w-full px-3 sm:px-0 py-4 bg-gray-900 shadow-lg">
       <div class="nav-container sm:w-4/5 mx-auto flex items-center justify-between">
-            <!-- ✅ Title + Hello Username -->
+            <!--  Title + Hello Username -->
             <div class="flex flex-col sm:flex-row sm:items-center sm:gap-4">
             <a class="text-2xl sm:text-3xl font-bold text-yellow-500  flex items-center">
                 <i class="material-icons-round text-3xl mr-1">description</i> We Keep
@@ -68,20 +68,20 @@
 
 
 
-        <!-- ✅ Right Side Buttons -->
+        <!-- Right Side Buttons -->
         <div class="flex items-center gap-16">
-             <!-- ✅ GitHub Fork link -->
+             <!-- GitHub Fork link -->
           <a href="https://github.com/kuldeepghorpade05/WE-KEEP" target="_blank" class="flex items-center gap-1 text-white hover:text-yellow-400" >
            <i class="fab fa-github"></i> Fork </a>
 
-             <!-- ✅ LinkedIn Profile link -->
+             <!--  LinkedIn Profile link -->
             <a href="https://www.linkedin.com/in/kuldeep-ghorpade/" target="_blank" class="flex items-center gap-1 text-white hover:text-blue-400">
              <i class="fab fa-linkedin"></i> LinkedIn </a>
 
           <button class="bg-yellow-500 p-2 rounded-md hover:bg-yellow-600 flex items-center gap-1" id="addBtn">
             <i class="material-icons-round">add_box</i>Add New Note
           </button>
-          <!-- ✅ Secure logout form -->
+          <!-- Secure logout form -->
           <form method="POST" action="{% url 'logout' %}">
             {% csrf_token %}
             <button type="submit"
@@ -95,7 +95,7 @@
       
     </header>
 
-    <!-- ✅ Notes Container -->
+    <!-- Notes Container -->
     <div
       id="notesContainer"
       class="grid pt-6 pb-8 pr-4 sm:pr-12 pl-4 sm:pl-12 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"
@@ -103,7 +103,7 @@
       <!-- Notes appear here from script.js -->
     </div>
 
-    <!-- ✅ Main App Script -->
+    <!--  Main App Script -->
     <script src="{% static 'assets/script.js' %}"></script>
   </body>
 </html>
