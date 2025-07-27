@@ -54,46 +54,44 @@
   <body class="bg-green-100 min-h-screen" style="font-family: 'Poppins', sans-serif">
     <!--  Header -->
     <header class="w-full px-3 sm:px-0 py-4 bg-gray-900 shadow-lg">
-      <div class="nav-container sm:w-4/5 mx-auto flex items-center justify-between">
-            <!--  Title + Hello Username -->
-            <div class="flex flex-col sm:flex-row sm:items-center sm:gap-4">
-            <a class="text-2xl sm:text-3xl font-bold text-yellow-500  flex items-center">
-                <i class="material-icons-round text-3xl mr-1">description</i> We Keep
-            </a>
-          <span class="font-semibold text-lg sm:text-xl sm:ml-3" style="color: #33ffa8;">
-          <span class="wave">👋</span> Hello, {{ username }}!
-          </span>
+  <div class="sm:w-4/5 mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+    
+    <!-- Left: Logo + Greeting -->
+    <div class="flex flex-col sm:flex-row sm:items-center sm:gap-4">
+      <a class="text-2xl sm:text-3xl font-bold text-yellow-500 flex items-center">
+        <i class="material-icons-round text-3xl mr-1">description</i> We Keep
+      </a>
+      <span class="font-semibold text-lg sm:text-xl sm:ml-3 text-green-300 truncate">
+        <span class="wave">👋</span> Hello, {{ username }}!
+      </span>
+    </div>
 
-            </div>
+    <!-- Right: Links + Buttons -->
+    <div class="flex flex-wrap gap-3 sm:gap-4 items-center justify-start sm:justify-end">
+      <a href="https://github.com/kuldeepghorpade05/WE-KEEP" target="_blank"
+         class="flex items-center gap-1 text-white hover:text-yellow-400">
+        <i class="fab fa-github"></i> Fork
+      </a>
 
+      <a href="https://www.linkedin.com/in/kuldeep-ghorpade/" target="_blank"
+         class="flex items-center gap-1 text-white hover:text-blue-400">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
 
+      <button class="bg-yellow-500 p-2 rounded-md hover:bg-yellow-600 flex items-center gap-1" id="addBtn">
+        <i class="material-icons-round">add_box</i>Add New Note
+      </button>
 
-        <!-- Right Side Buttons -->
-        <div class="flex items-center gap-16">
-             <!-- GitHub Fork link -->
-          <a href="https://github.com/kuldeepghorpade05/WE-KEEP" target="_blank" class="flex items-center gap-1 text-white hover:text-yellow-400" >
-           <i class="fab fa-github"></i> Fork </a>
-
-             <!--  LinkedIn Profile link -->
-            <a href="https://www.linkedin.com/in/kuldeep-ghorpade/" target="_blank" class="flex items-center gap-1 text-white hover:text-blue-400">
-             <i class="fab fa-linkedin"></i> LinkedIn </a>
-
-          <button class="bg-yellow-500 p-2 rounded-md hover:bg-yellow-600 flex items-center gap-1" id="addBtn">
-            <i class="material-icons-round">add_box</i>Add New Note
-          </button>
-          <!-- Secure logout form -->
-          <form method="POST" action="{% url 'logout' %}">
-            {% csrf_token %}
-            <button type="submit"
-              class="bg-red-500 text-white p-2 rounded-md hover:bg-red-600 flex items-center gap-1">
-              <i class="material-icons-round">logout</i> Logout
-            </button>
-          </form>
-
-        
-        </div>
-      
-    </header>
+      <form method="POST" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit"
+          class="bg-red-500 text-white p-2 rounded-md hover:bg-red-600 flex items-center gap-1">
+          <i class="material-icons-round">logout</i> Logout
+        </button>
+      </form>
+    </div>
+  </div>
+</header>
 
     <!-- Notes Container -->
     <div

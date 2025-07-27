@@ -25,7 +25,14 @@ SECRET_KEY = 'django-insecure-ro!4($icx-m@sihzsvue1&sn=@6on708ue((kx1^(0c4mqjr+l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1']
+# ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['wekeep.duckdns.org']
+# ALLOWED_HOSTS = ["127.0.0.1", "localhost", "wekeep.duckdns.org"]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", "wekeep.duckdns.org"]
+
+
 
 
 # Application definition
@@ -170,43 +177,21 @@ SOCIALACCOUNT_PROVIDERS = {
 
 SOCIALACCOUNT_ADAPTER = 'base.adapters.MySocialAccountAdapter'  # adjust path
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://wekeep.duckdns.org',
+    'https://wekeep.duckdns.org:8000',
+]
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 
 SITE_ID = 1
 
+import os
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ACCOUNT_DEFAULT_HTTP_PROTOCOL = 'https'
 
 
 

@@ -1,0 +1,26 @@
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.env
+
+# Django migration files (optional)
+**/migrations/*.py
+**/migrations/*.pyc
+
+# OS / Editor files
+*.DS_Store
+*.swp
+*.swo
+*.bak
+
+# Logs
+*.log
+
+# Docker artifacts
+Dockerfile
+.dockerignore
